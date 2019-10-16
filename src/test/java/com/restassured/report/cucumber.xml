@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="5" time="8.152409">
+<testcase classname="This feature is to check API HTTP Requests" name="Check if user is able to submit GET API request using query param" time="5.641454">
+<system-out><![CDATA[When User send a GET request to "/api/users?page=2".........................passed
+Then User verify GET response status should be 200..........................passed
+And User verify the JSON response "page" equals "2".........................passed
+And User verify the JSON response "per_page" equals "6".....................passed
+And User verify the JSON response "total" equals "12".......................passed
+And User verify the JSON response "total_pages" equals "2"..................passed
+And User verify the JSON response "data[0].first_name" equals "Michael".....passed
+And User verify the JSON response "data[1].first_name" equals "Lindsay".....passed
+And User verify the JSON response "data[2].first_name" equals "Tobias"......passed
+And User verify the JSON response "data[2].id" equals "9"...................passed
+And User verify the JSON response "data[2].last_name" equals "Funke"........passed
+And User verify the JSON response "data[2].email" equals "tobias.funke@reqres.in".passed
+]]></system-out>
+</testcase>
+<testcase classname="This feature is to check API HTTP Requests" name="Check if user is able to submit GET API request" time="0.365852">
+<system-out><![CDATA[When User send a GET request to "/api/users/2"..............................passed
+Then User verify GET response status should be 200..........................passed
+And User verify the JSON response "data.id" equals "2"......................passed
+And User verify the JSON response "data.email" equals "janet.weaver@reqres.in".passed
+And User verify the JSON response "data.first_name" equals "Janet"..........passed
+And User verify the JSON response "data.last_name" equals "Weaver"..........passed
+]]></system-out>
+</testcase>
+<testcase classname="This feature is to check API HTTP Requests" name="Check if user is able to submit POST API request" time="0.78637">
+<system-out><![CDATA[When User use a "userpost" file to send a POST request to "/api/users/".....passed
+Then User verify POST response status should be 201.........................passed
+And User verify the JSON response "createdAt" should be not null............passed
+And User verify the JSON response "name" equals "morpheus"..................passed
+]]></system-out>
+</testcase>
+<testcase classname="This feature is to check API HTTP Requests" name="Check if user is able to submit PUT API request" time="0.674601">
+<system-out><![CDATA[When User use a "userput" file to send a PUT request to "/api/users/2"......passed
+Then User verify PUT response status should be 200..........................passed
+And User verify the JSON response "updatedAt" should be not null............passed
+And User verify the JSON response "job" equals "zion resident"..............passed
+]]></system-out>
+</testcase>
+<testcase classname="This feature is to check API HTTP Requests" name="Check if user is able to submit DELETE API request" time="0.684132">
+<system-out><![CDATA[When User send a DELETE request to "/api/users/2"...........................passed
+Then User verify DELETE response status should be 204.......................passed
+]]></system-out>
+</testcase>
+</testsuite>
